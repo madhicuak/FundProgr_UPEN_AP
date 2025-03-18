@@ -1,0 +1,79 @@
+Una zapatera necesita registrar los datos de sus vendedores y los datos de las ventas individuales para calcular algunos estándares de calidad a fin de mejorar la productividad y otorgar bonos, así como "cortar cabezas". 
+El sistema debe solicitar el a cuántos vendedores se va a registrar su información y de cada vendedor debe solicitar cuántas ventas realizó y de cuánto fue el valor de cada una. 
+Después de terminar el registro de las ventas, debe mostrar el total de las ventas de ese vendedor, el número de ventas que hizo y su venta más alta. 
+Si la venta más alta es menor a $100 o el total es menor de $1,500, debe mostrar un mensaje de que pase a Recursos Humanos. 
+El reporte final debe entregar un reporte de cuántos vendedores se registraron en el sistema y cuánto fue el total de las ventas globales de la empresa. 
+Si el reporte global es mayor a $20,000 deberá mostrar un mensaje de que se alcanzó la meta , de lo contrario mostrará un mensaje que habrá que convocar una reunión . 
+
+Algoritmo VentasZapateria
+	Escribir "Número de vendedores: "
+	Leer nu_vendedores
+	venta_ma = 0
+	
+	Para i <- 1 Hasta nu_vendedores Hacer
+		Escribir "Número de ventas del vendedor número " , i , ":"
+		Leer nu_ventas
+		Para n <- 1 Hasta nu_ventas Hacer
+			Escribir "Valor de la venta número ", n , ":"
+			Si valor_ventas > venta_ma Entonces
+				venta_ma <- valor_ventas
+			SiNo
+			FinSi
+			Leer valor_ventas
+			total_ventas = total_ventas + valor_ventas
+		Fin Para
+		
+		total_empresa = total_empresa + total_ventas
+		
+		Si venta_ma < 100 o total_ventas < 1500 Entonces
+			Escribir "Haga el favor de pasar a recursos humanos."
+			Escribir "________________________________________________________"
+			Escribir ""
+		SiNo
+		Fin Si
+	Fin Para
+	
+	Escribir "______ ___________ ___________ _____ _____ "
+	Escribir "| ___ \  ___| ___ \  _  | ___ \_   _|  ___| o"
+	Escribir "| |_/ / |__ | |_/ / | | | |_/ / | | | |__  "
+	Escribir "|    /|  __||  __/| | | |    /  | | |  __| "
+	Escribir "| |\ \| |___| |   \ \_/ / |\ \  | | | |___  o"
+	Escribir "\_| \_\____/\_|    \___/\_| \_| \_/ \____/ "
+	Escribir ""
+	Escribir "________________________________________________________"
+	Escribir nu_vendedores " vendedores se registraron en el sistema."
+	Escribir "Total de ventas a nivel empresa: " total_empresa
+	Si total_empresa > 20000 Entonces
+		Escribir "¡Felicidades! Se ha alcanzado la meta."
+	SiNo
+		Escribir "Será necesario convocar una reunion con gerencia."
+	Fin Si
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Número de vendedores:
+> 2
+Número de ventas del vendedor número 1:
+> 2
+Valor de la venta número 1:
+> 18000
+Valor de la venta número 2:
+> 5
+Número de ventas del vendedor número 2:
+> 2
+Valor de la venta número 1:
+> 15000
+Valor de la venta número 2:
+> 12000
+______ ___________ ___________ _____ _____
+| ___ \  ___| ___ \  _  | ___ \_   _|  ___| o
+| |_/ / |__ | |_/ / | | | |_/ / | | | |__
+|    /|  __||  __/| | | |    /  | | |  __|
+| |\ \| |___| |   \ \_/ / |\ \  | | | |___  o
+\_| \_\____/\_|    \___/\_| \_| \_/ \____/
+
+________________________________________________________
+2 vendedores se registraron en el sistema.
+Total de ventas a nivel empresa: 63010
+¡Felicidades! Se ha alcanzado la meta.
+*** Ejecución Finalizada. ***
