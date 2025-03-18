@@ -1,0 +1,188 @@
+El programador sigue teniendo complicaciones para ajustar su código cuando ingresan valores, pero necesita ayuda, ahora su jefe, que no conoce mucho de programación, 
+quiere un programa para calcular los rendimientos de 4 vendedores y ver la diferencia entre estos.
+El programa debe recibir los 4 valores de los vendedores, que se calcula en ventas por mes, 
+después, el programa debe ordenarlos de menor a mayor, siendo 4 el mayor y 1 el menor, una vez hecho esto debe hacer las siguientes operaciones.
+
+Mostrar los números ordenados
+El resultado del 4 menos el 1
+El resultado del 2 menos el 1
+El resultado del 4 menos el 3
+El resultado del 3 menos el 2
+La suma de todas las ventas y el promedio general
+
+Algoritmo VentasVendedores
+	Escribir "Introducir ventas mensuales del primer vendedor: "
+	Leer PrVend
+	Escribir "Introducir ventas mensuales del segundo vendedor: "
+	Leer SeVend
+	Escribir "Introducir ventas mensuales del tercer vendedor: "
+	Leer TeVend
+	Escribir "Introducir ventas mensuales del cuarto vendedor: "
+	Leer CuVend
+	
+	Si PrVend < SeVend y PrVend < TeVend y PrVend < CuVend Entonces
+		Primero = PrVend
+		Si SeVend < TeVend y SeVend < CuVend Entonces
+			Segund = SeVend
+			Si TeVend < CuVend Entonces
+				Tercero = TeVend
+				Cuarto = CuVend
+			SiNo
+				Tercero = CuVend
+				Cuarto = TeVend
+			Fin Si
+		SiNo
+			Si TeVend < SeVend y TeVend < CuVend Entonces
+				Segund = TeVend
+				Si SeVend < CuVend Entonces
+					Tercero = SeVend
+					Cuarto = CuVend
+				SiNo
+					Tercero = CuVend
+					Cuarto = SeVend
+				Fin Si
+			SiNo
+				Segund = CuVend
+				Si SeVend < TeVend Entonces
+					Tercero = SeVend
+					Cuarto = TeVend
+				SiNo
+					Tercero = TeVend
+					Cuarto = SeVend
+				Fin Si
+			Fin Si
+		Fin Si
+	SiNo
+		Si SeVend < PrVend y SeVend < TeVend y SeVend < CuVend Entonces
+			Primero = SeVend
+			Si PrVend < TeVend y PrVend < CuVend Entonces
+				Segund = PrVend
+				Si TeVend < CuVend Entonces
+					Tercero = TeVend
+					Cuarto = CuVend
+				SiNo
+					Tercero = CuVend
+					Cuarto = TeVend
+				Fin Si
+			SiNo
+				Si TeVend < PrVend y TeVend < CuVend Entonces
+					Segund = TeVend
+					Si PrVend < CuVend Entonces
+						Tercero = PrVend
+						Cuarto = CuVend
+					SiNo
+						Tercero = CuVend
+						Cuarto = PrVend
+					Fin Si
+				SiNo
+					Segund = CuVend
+					Si PrVend < TeVend Entonces
+						Tercero = PrVend
+						Cuarto = TeVend
+					SiNo
+						Tercero = TeVend
+						Cuarto = PrVend
+					Fin Si
+				Fin Si
+			Fin Si
+		SiNo
+			Si TeVend < PrVend y TeVend < SeVend y TeVend < CuVend Entonces
+				Primero = TeVend
+				Si PrVend < SeVend y PrVend < CuVend Entonces
+					Segund = PrVend
+					Si SeVend < CuVend Entonces
+						Tercero = SeVend
+						Cuarto = CuVend
+					SiNo
+						Tercero = CuVend
+						Cuarto = SeVend
+					Fin Si
+				SiNo
+					Si SeVend < PrVend y SeVend < CuVend Entonces
+						Segund = SeVend
+						Si PrVend < CuVend Entonces
+							Tercero = PrVend
+							Cuarto = CuVend
+						SiNo
+							Tercero = CuVend
+							Cuarto = PrVend
+						Fin Si
+					SiNo
+						Segund = CuVend
+						Si PrVend < SeVend Entonces
+							Tercero = PrVend
+							Cuarto = SeVend
+						SiNo
+							Tercero = SeVend
+							Cuarto = PrVend
+						Fin Si
+					Fin Si
+				Fin Si
+			SiNo
+				Primero = CuVend
+				Si PrVend < SeVend y PrVend < TeVend Entonces
+					Segund = PrVend
+					Si SeVend < TeVend Entonces
+						Tercero = SeVend
+						Cuarto = TeVend
+					SiNo
+						Tercero = TeVend
+						Cuarto = SeVend
+					Fin Si
+				SiNo
+					Si SeVend < PrVend y SeVend < TeVend Entonces
+						Segund = SeVend
+						Si PrVend < TeVend Entonces
+							Tercero = PrVend
+							Cuarto = TeVend
+						SiNo
+							Tercero = TeVend
+							Cuarto = PrVend
+						Fin Si
+					SiNo
+						Segund = TeVend
+						Si PrVend < SeVend Entonces
+							Tercero = PrVend
+							Cuarto = SeVend
+						SiNo
+							Tercero = SeVend
+							Cuarto = PrVend
+						Fin Si
+					Fin Si
+				Fin Si
+			Fin Si
+		Fin Si
+	Fin Si
+	
+	Escribir "Cuarto: " , Cuarto
+	Escribir "Tercero: " , Tercero
+	Escribir "Segundo: " , Segund
+	Escribir "Primero: " , Primero
+	Escribir "Cuárto más alto menos el primero: " , Cuarto - Primero
+	Escribir "Segundo Más alto menos el primero: " , Segund - Primero
+	Escribir "Cuarto más alto menos el tercero: " , Cuarto - Tercero
+	Escribir "Tercero más alto menos el segundo: " , Tercero - Segund
+	Escribir "Total de ventas: " , Primero + Segund + Tercero + Cuarto 
+	Escribir "Promedio general: " , (Primero + Segund + Tercero + Cuarto) / 4
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Introducir ventas mensuales del primer vendedor:
+> 18000
+Introducir ventas mensuales del segundo vendedor:
+> 15000
+Introducir ventas mensuales del tercer vendedor:
+> 80000
+Introducir ventas mensuales del cuarto vendedor:
+> 9
+Cuarto: 80000
+Tercero: 18000
+Segundo: 15000
+Primero: 9
+Cuárto más alto menos el primero: 79991
+Segundo Más alto menos el primero: 14991
+Cuarto más alto menos el tercero: 62000
+Tercero más alto menos el segundo: 3000
+Total de ventas: 113009
+Promedio general: 28252.25
+*** Ejecución Finalizada. ***
