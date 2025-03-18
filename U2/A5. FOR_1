@@ -1,0 +1,49 @@
+Una primaria necesita un sistema para calcular las calificaciones, pero dependiendo del grado varían las materias 
+y eso genera un trabajo más complejo para poder calcular el promedio de cada alumno correctamente.
+La directora quiere que los maestros puedan ingresar el nombre del alumno que van a evaluar, después cuántas materias van a calificar, 
+después, ingresar cada calificación, si el resultado es mayor a 6, deberá mostrar un mensaje que aprobó, si es menor, 
+deberá mostrar un mensaje que necesitará recursamiento y si la calificación es igual a 10, deberá mostrar un mensaje que es un alumno destacado.
+Al final, el programa debe mostrar un reporte con el nombre del alumno, su promedio final y el mensaje que dependerá de su calificación.
+
+Algoritmo CalificacionesPrimaria
+	Escribir "Ingrese el nombre del alumno: "
+	Leer Alumno
+	Escribir "Materias a calificar: "
+	Leer nMaterias
+	
+	Para i <- 1 Hasta nMaterias Hacer
+		Escribir "Materia ", i
+		Escribir "Calificacion: "
+		Leer Calificacion
+		Promedio = Promedio + Calificacion
+	Fin Para
+	Promedio = Promedio / nMaterias
+	
+	Escribir "Reporte del alumno " Alumno
+	Escribir "Promedio: " Promedio
+	Si Promedio = 10 Entonces
+		Escribir "Su Promedio es diez, ¡Es un alumno destacado!."
+	SiNo
+		Si Promedio < 10 y Promedio > 5 Entonces
+			Escribir "Aprobado"
+		SiNo
+			Escribir "Sin calificación aprobatoria, necesita recursamiento."
+		Fin Si
+	Fin Si
+FinAlgoritmo
+
+*** Ejecución Iniciada. ***
+Ingrese el nombre del alumno:
+> Pepe
+Materias a calificar:
+> 2
+Materia 1
+Calificacion:
+> 10
+Materia 2
+Calificacion:
+> 8
+Reporte del alumno Pepe
+Promedio: 9
+Aprobado
+*** Ejecución Finalizada. **
