@@ -1,0 +1,13 @@
+Algoritmo Calculadora_Area_Nieve
+	Escribir "Introduce radio del círculo: "
+	Leer R
+	Escribir "Introduce hipotenusa del triángulo: "
+	Leer H
+	
+	Area_Circulo = ((R * R) * 3.1416)/4
+	Altura = raiz((H * H) - (R * R))
+	Area_Circulo_Chico = (((R/2) * (R/2)) * 3.1416)/2
+	Area_triángulo = ((2 * R) * Altura)/2
+	
+	Escribir "Área: " Area_triángulo + Area_Circulo - Area_Circulo_Chico
+FinAlgoritmo
