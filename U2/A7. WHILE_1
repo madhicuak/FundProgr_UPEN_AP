@@ -1,0 +1,83 @@
+La empresa de manufactura "ACME", necesita un nuevo control para gestionar su inventario por el área correspondiente, 
+últimamente el turno de la tarde parece "multiplicar" la producción por las noches cuando sale el supervisor, lo cual ha generado pérdidas en la empresa.
+Ahora, necesitan añadir accesos para registrar la producción diaria, para ello necesitan un sistema protegido por contraseña de al menos 6 caracteres, de 3 letras, al menos 1 mayúsculas y 3 números que no sean consecutivos. 
+Deberá poner un mensaje que diga que se debe llamar al supervisor si la contraseña es incorrecta, de lo contrario, deberá mostrar un mensaje de bienvenida.
+Una vez ingresado el sistema, deberá poder registrar las piezas fabricadas, para ello, el sistema deberá pedir la cantidad de piezas que se quieren añadir y permitir el registro, 
+el supervisor deberá poder ingresar todas las piezas que requiera y para terminar el ingreso deberá ingresar 4 ceros consecutivos.
+Al terminar, deberá mostrar la suma total de las piezas fabricadas, si el total de esas ventas es mayor a 10,000 unidades deberá mostrar un mensaje de que se ha cumplido la meta, 
+de lo contrario, deberá mostrar una alerta para producción.
+
+Algoritmo AcmeProdd
+		
+		NumPiezas = 1
+		
+		Escribir "Ingresar contraseña: "
+		Leer contraseña
+		Mientras contraseña <> "Acm381" Hacer
+			Escribir "Contraseña incorrecta. Inténtalo de nuevo:"
+			Leer contraseña
+		FinMientras
+		
+		Escribir "Bienvenido/a al registro de producción diaria."
+		
+		Mientras NumPiezas <> 0000 Hacer
+			Escribir "Cantidad de piezas a registrar (Ingresa 0000 para terminar):"
+			Leer NumPiezas
+			TotalPiezas = TotalPiezas + NumPiezas
+		Fin Mientras
+		NumPiezas = NumPiezas - 1
+		
+		Escribir ""
+		Escribir "______ ___________ ___________ _____ _____ "
+		Escribir "| ___ \  ___| ___ \  _  | ___ \_   _|  ___| o"
+		Escribir "| |_/ / |__ | |_/ / | | | |_/ / | | | |__  "
+		Escribir "|    /|  __||  __/| | | |    /  | | |  __| "
+		Escribir "| |\ \| |___| |   \ \_/ / |\ \  | | | |___  o"
+		Escribir "\_| \_\____/\_|    \___/\_| \_| \_/ \____/ "
+		Escribir ""
+		
+		Escribir "Total de piezas fabricadas: " TotalPiezas
+		Si TotalPiezas > 10000 Entonces
+			Escribir "¡Felicidades, se ha alcanzado la meta!"
+		SiNo
+			Escribir "Es necesario hacer una junta con gerencia en el departamento de producción."
+		Fin Si
+		
+FinAlgoritmo
+
+
+*** Ejecución Iniciada. ***
+Ingresar contraseña:
+> Acm381
+Bienvenido/a al registro de producción diaria.
+Cantidad de piezas a registrar (Ingresa 0000 para terminar):
+> 5
+Cantidad de piezas a registrar (Ingresa 0000 para terminar):
+> 5
+Cantidad de piezas a registrar (Ingresa 0000 para terminar):
+> 121
+Cantidad de piezas a registrar (Ingresa 0000 para terminar):
+> 1212
+Cantidad de piezas a registrar (Ingresa 0000 para terminar):
+> 5
+Cantidad de piezas a registrar (Ingresa 0000 para terminar):
+> 4752
+Cantidad de piezas a registrar (Ingresa 0000 para terminar):
+> 74
+Cantidad de piezas a registrar (Ingresa 0000 para terminar):
+> 7
+Cantidad de piezas a registrar (Ingresa 0000 para terminar):
+> 7
+Cantidad de piezas a registrar (Ingresa 0000 para terminar):
+> 0000
+
+______ ___________ ___________ _____ _____
+| ___ \  ___| ___ \  _  | ___ \_   _|  ___| o
+| |_/ / |__ | |_/ / | | | |_/ / | | | |__
+|    /|  __||  __/| | | |    /  | | |  __|
+| |\ \| |___| |   \ \_/ / |\ \  | | | |___  o
+\_| \_\____/\_|    \___/\_| \_| \_/ \____/
+
+Total de piezas fabricadas: 6188
+Es necesario hacer una junta con gerencia en el departamento de producción.
+*** Ejecución Finalizada. ***
